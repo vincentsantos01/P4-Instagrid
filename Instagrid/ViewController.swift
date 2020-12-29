@@ -22,7 +22,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var realViews: [UIView]!
     // 7 buttons of app
     @IBOutlet var buttons: [UIButton]!
- 
+    
     var buttonNumber = 0
     
     // seletion dispositions
@@ -104,22 +104,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func didTapButtonTopLeft() {
         buttonPhotoLibrary()
-                    self.buttonNumber = 1
+        self.buttonNumber = 1
     }
     
     @IBAction func didTapButtonTopRight() {
         buttonPhotoLibrary()
-                    self.buttonNumber = 2
+        self.buttonNumber = 2
     }
     
     @IBAction func didTapButtonBottomLeft() {
         buttonPhotoLibrary()
-                    self.buttonNumber = 3
+        self.buttonNumber = 3
     }
     
     @IBAction func didTapButtonBottomRight() {
         buttonPhotoLibrary()
-                    self.buttonNumber = 4
+        self.buttonNumber = 4
     }
     
     // Alert incomplete GrideView
