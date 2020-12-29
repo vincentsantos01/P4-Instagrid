@@ -23,9 +23,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // 7 buttons of app
     @IBOutlet var buttons: [UIButton]!
  
-    
-    
-    
     var buttonNumber = 0
     
     // seletion dispositions
@@ -87,8 +84,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func didTapButtonTopLeft() {
+    private func buttonPhotoLibrary() {
         PHPhotoLibrary.requestAuthorization({status in
             if status == .authorized {
                 DispatchQueue.main.async {
@@ -97,62 +93,36 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     ButtonTapTopLeft.delegate = self
                     ButtonTapTopLeft.allowsEditing = true
                     self.present(ButtonTapTopLeft, animated: true)
-                    self.buttonNumber = 1
                 }
             }
         }
+        )
         
-        )  }
+    }
+    
+    // Action of GriView Button
+    
+    @IBAction func didTapButtonTopLeft() {
+        buttonPhotoLibrary()
+                    self.buttonNumber = 1
+    }
     
     @IBAction func didTapButtonTopRight() {
-        PHPhotoLibrary.requestAuthorization({status in
-            if status == .authorized {
-                DispatchQueue.main.async {
-                    let ButtonTapTopRight = UIImagePickerController()
-                    ButtonTapTopRight.sourceType = .photoLibrary
-                    ButtonTapTopRight.delegate = self
-                    ButtonTapTopRight.allowsEditing = true
-                    self.present(ButtonTapTopRight, animated: true)
+        buttonPhotoLibrary()
                     self.buttonNumber = 2
-                }
-            }
-        }
-        
-        )  }
+    }
     
     @IBAction func didTapButtonBottomLeft() {
-        PHPhotoLibrary.requestAuthorization({status in
-            if status == .authorized {
-                DispatchQueue.main.async {
-                    let ButtonTapBottomLeft = UIImagePickerController()
-                    ButtonTapBottomLeft.sourceType = .photoLibrary
-                    ButtonTapBottomLeft.delegate = self
-                    ButtonTapBottomLeft.allowsEditing = true
-                    self.present(ButtonTapBottomLeft, animated: true)
+        buttonPhotoLibrary()
                     self.buttonNumber = 3
-                }
-            }
-        }
-        
-        )  }
+    }
     
     @IBAction func didTapButtonBottomRight() {
-        PHPhotoLibrary.requestAuthorization({status in
-            if status == .authorized {
-                DispatchQueue.main.async {
-                    let ButtonTapBottomRight = UIImagePickerController()
-                    ButtonTapBottomRight.sourceType = .photoLibrary
-                    ButtonTapBottomRight.delegate = self
-                    ButtonTapBottomRight.allowsEditing = true
-                    self.present(ButtonTapBottomRight, animated: true)
+        buttonPhotoLibrary()
                     self.buttonNumber = 4
-                }
-            }
-        }
-        
-        )  }
+    }
     
-    /// Display an alert if the grid isn't complete.
+    // Alert incomplete GrideView
     func alerteIncompleteGrid() {
         let alert = UIAlertController(title: "erreur", message: "Merci d'ajouter toutes les photos.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
