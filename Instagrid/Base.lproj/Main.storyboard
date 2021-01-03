@@ -1058,6 +1058,7 @@
                     <connections>
                         <outlet property="gridStackView" destination="sJx-aY-yfX" id="w9s-d3-Fms"/>
                         <outlet property="gridView" destination="P5o-RI-xwX" id="Lmh-PY-kht"/>
+                        <outlet property="swipeLabel" destination="lMN-TA-Y91" id="fYH-nk-RSA"/>
                         <outletCollection property="realViews" destination="rqu-fu-ngE" collectionClass="NSMutableArray" id="eFd-23-nK2"/>
                         <outletCollection property="realViews" destination="VLC-S7-QeP" collectionClass="NSMutableArray" id="gpy-Ou-5c0"/>
                         <outletCollection property="realViews" destination="d7I-yi-yo2" collectionClass="NSMutableArray" id="FPq-eL-TQ7"/>

@@ -23,6 +23,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // 7 buttons of app
     @IBOutlet var buttons: [UIButton]!
     
+    @IBOutlet weak var swipeLabel: UIStackView!
+    
+    
     var buttonNumber = 0
     
     // seletion dispositions
@@ -40,28 +43,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /*    let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipes(_:)))
-         
-         upSwipe.direction = .up
-         leftSwipe.direction = .left
-         
-         view.addGestureRecognizer(upSwipe)
-         view.addGestureRecognizer(leftSwipe)
-         
-         }
-         
-         @objc func handleSwipes(_ sender:UISwipeGestureRecognizer) {
-         if (sender.direction == .up) {
-         let labelPosition = CGPoint(x: swipeLabel.frame.origin.x, y: swipeLabel.frame.origin.y - 50.0)
-         swipeLabel.frame = CGRect(x: labelPosition.x, y: labelPosition.y, width: swipeLabel.frame.size.width, height: swipeLabel.frame.size.height)
-         }
-         
-         if (sender.direction == .left) {
-         let labelPosition = CGPoint(x: swipeLabel.frame.origin.x - 50.0, y: swipeLabel.frame.origin.y)
-         swipeLabel.frame = CGRect(x: labelPosition.x, y: labelPosition.y, width: swipeLabel.frame.size.width, height: swipeLabel.frame.size.height)
-         }*/
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -139,13 +120,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             alerteIncompleteGrid()
         } else {
             if isLeft {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.gridView.frame.origin.x = -self.gridView.frame.width
-                })
                 
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.gridView.transform = CGAffineTransform(translationX: -500, y: 0)
+                })
             } else {
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.gridView.frame.origin.y = -self.gridView.frame.height
+                    self.gridView.transform = CGAffineTransform(translationX: 0, y: -500)
                 })
             }
             // Open the sharing menu
@@ -153,8 +134,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 let activityController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
                 activityController.completionWithItemsHandler = { activity, success, items, error in
                     UIView.animate(withDuration: 0.3, animations: {
-                        self.gridView.center.y = self.view.center.y
-                        self.gridView.center.x = self.view.center.x
+                        self.gridView.transform = .identity
                     })
                 }
                 present(activityController, animated: true, completion: nil)
@@ -169,7 +149,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         return imgConverted
     }
-    
     
     @IBAction func SwipUp(_ sender: UISwipeGestureRecognizer) {
         self.sharePicture(isLeft: false)
