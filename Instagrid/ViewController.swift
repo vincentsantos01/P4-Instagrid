@@ -22,8 +22,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet var realViews: [UIView]!
     // 7 buttons of app
     @IBOutlet var buttons: [UIButton]!
+    // SwipeUp views
+    @IBOutlet weak var swipeLabel: UILabel!
+    @IBOutlet weak var swipeUpIcon: UIImageView!
     
-    @IBOutlet weak var swipeLabel: UIStackView!
     
     
     var buttonNumber = 0
@@ -43,6 +45,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Device rotation
+        let didRotate: (Notification) -> Void = { [self] notification in
+            switch UIDevice.current.orientation {
+            case .landscapeLeft, .landscapeRight:
+                self.swipeLabel.text = "Swipe left to share"
+                self.swipeUpIcon.image = #imageLiteral(resourceName: "Arrow Left")
+            case .portrait:
+                self.swipeLabel.text = "Swipe up to share"
+                self.swipeUpIcon.image = #imageLiteral(resourceName: "Arrow Up")
+            default:
+                break
+            }
+        }
+        NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: .main, using: didRotate)
+
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -85,27 +106,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func didTapButtonTopLeft() {
         buttonPhotoLibrary()
-        self.buttonNumber = 2
+        self.buttonNumber = 4
     }
     
     @IBAction func didTapButtonTopRight() {
         buttonPhotoLibrary()
-        self.buttonNumber = 1
+        self.buttonNumber = 3
     }
     
     @IBAction func didTapButtonBottomLeft() {
         buttonPhotoLibrary()
-        self.buttonNumber = 4
+        self.buttonNumber = 2
     }
     
     @IBAction func didTapButtonBottomRight() {
         buttonPhotoLibrary()
-        self.buttonNumber = 3
+        self.buttonNumber = 1
     }
     
     // Alert incomplete GrideView
     func alerteIncompleteGrid() {
-        let alert = UIAlertController(title: "erreur", message: "Merci d'ajouter toutes les photos.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Erreur", message: "Merci d'ajouter toutes les photos.", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
         })
         alert.addAction(action)
@@ -141,6 +162,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
+
     
     func convertView(view: GridView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
@@ -150,7 +172,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return imgConverted
     }
     
-
     
+    @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
+        self.sharePicture(isLeft: false)
+    }
+    @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
+        self.sharePicture(isLeft: true)
+    }
+        
 }
 
