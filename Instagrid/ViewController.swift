@@ -85,22 +85,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBAction func didTapButtonTopLeft() {
         buttonPhotoLibrary()
-        self.buttonNumber = 1
+        self.buttonNumber = 2
     }
     
     @IBAction func didTapButtonTopRight() {
         buttonPhotoLibrary()
-        self.buttonNumber = 2
+        self.buttonNumber = 1
     }
     
     @IBAction func didTapButtonBottomLeft() {
         buttonPhotoLibrary()
-        self.buttonNumber = 3
+        self.buttonNumber = 4
     }
     
     @IBAction func didTapButtonBottomRight() {
         buttonPhotoLibrary()
-        self.buttonNumber = 4
+        self.buttonNumber = 3
     }
     
     // Alert incomplete GrideView
@@ -150,9 +150,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return imgConverted
     }
     
-    @IBAction func SwipUp(_ sender: UISwipeGestureRecognizer) {
-        self.sharePicture(isLeft: false)
-    }
+
     
 }
 
