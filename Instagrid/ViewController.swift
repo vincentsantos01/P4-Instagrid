@@ -45,7 +45,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //Device rotation
+        
         let didRotate: (Notification) -> Void = { [self] notification in
             switch UIDevice.current.orientation {
             case .landscapeLeft, .landscapeRight:
@@ -59,12 +61,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
         NotificationCenter.default.addObserver(forName: UIDevice.orientationDidChangeNotification, object: nil, queue: .main, using: didRotate)
-
+        
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
     }
+    // Ajout image selon case demmandée
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage]as? UIImage {
@@ -85,6 +88,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    // Fonction générale de demande d'autorisation
     
     private func buttonPhotoLibrary() {
         PHPhotoLibrary.requestAuthorization({status in
@@ -134,6 +138,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         })
     }
     
+    // Translation pour partage
     
     func sharePicture(isLeft: Bool) {
         
@@ -162,7 +167,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         }
     }
-
+    
     
     func convertView(view: GridView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
@@ -172,6 +177,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return imgConverted
     }
     
+    // Swipe up and left gestures
     
     @IBAction func swipeUp(_ sender: UISwipeGestureRecognizer) {
         self.sharePicture(isLeft: false)
@@ -179,6 +185,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func swipeLeft(_ sender: UISwipeGestureRecognizer) {
         self.sharePicture(isLeft: true)
     }
-        
+    
 }
 
