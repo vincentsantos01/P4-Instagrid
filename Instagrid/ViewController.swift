@@ -143,11 +143,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if isLeft {
                 
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.gridView.transform = CGAffineTransform(translationX: -500, y: 0)
+                    self.gridView.transform = CGAffineTransform(translationX: -self.view.bounds.width, y: 0)
                 })
             } else {
                 UIView.animate(withDuration: 0.3, animations: {
-                    self.gridView.transform = CGAffineTransform(translationX: 0, y: -500)
+                    self.gridView.transform = CGAffineTransform(translationX: 0, y: -self.view.bounds.height)
                 })
             }
             // Open the sharing menu

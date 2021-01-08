@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -22,11 +22,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qqf-JJ-qhU" userLabel="Logo">
-                                <rect key="frame" x="264.5" y="9" width="138.5" height="45.5"/>
+                                <rect key="frame" x="379" y="9" width="138.33333333333337" height="45.333333333333336"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45.329999999999998" id="9zb-Ib-X5c"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="CiH-5Q-0lv"/>
@@ -51,7 +51,7 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="kga-H1-gPH" userLabel="ModelsStackView">
-                                <rect key="frame" x="571" y="42.5" width="80" height="290"/>
+                                <rect key="frame" x="756" y="62" width="80" height="290"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7X-WP-bbV">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -421,17 +421,17 @@
                                 </variation>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bqr-Sp-CEd" userLabel="swipeUpView">
-                                <rect key="frame" x="7" y="156" width="155" height="63"/>
+                                <rect key="frame" x="121.66666666666669" y="175.66666666666666" width="155" height="63"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="S7C-2G-9Rn" userLabel="swipeUpStackView">
-                                        <rect key="frame" x="16" y="15" width="123.5" height="33.5"/>
+                                        <rect key="frame" x="15.999999999999986" y="15" width="123.00000000000001" height="33.666666666666664"/>
                                         <subviews>
                                             <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="1OR-8U-7QD" userLabel="SwipeUpIcon">
-                                                <rect key="frame" x="0.0" y="0.0" width="123.5" height="3.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="123" height="3.3333333333333335"/>
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM5-z8-w6w">
-                                                <rect key="frame" x="0.0" y="16.5" width="123.5" height="17"/>
+                                                <rect key="frame" x="0.0" y="16.333333333333343" width="123" height="17.333333333333329"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="zM5-z8-w6w" secondAttribute="height" multiplier="123:17" id="GjF-S7-SxC"/>
                                                 </constraints>
@@ -498,19 +498,19 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P5o-RI-xwX" userLabel="GridView" customClass="GridView" customModule="Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="176" y="60" width="315" height="315"/>
+                                <rect key="frame" x="290.66666666666669" y="78" width="315.00000000000006" height="315"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sJx-aY-yfX" userLabel="gridStackView">
-                                        <rect key="frame" x="8" y="8" width="299.5" height="299"/>
+                                        <rect key="frame" x="8" y="8" width="299" height="299"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Toz-Jb-xRl" userLabel="topStackView">
-                                                <rect key="frame" x="0.0" y="0.0" width="299.5" height="144"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="299" height="144"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zha-vX-eFf" userLabel="viewTopLeft">
-                                                        <rect key="frame" x="0.0" y="0.0" width="144.5" height="144"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="144.33333333333334" height="144"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3o2-ba-YgE" userLabel="buttonTopLeft">
-                                                                <rect key="frame" x="0.0" y="0.0" width="144.5" height="144"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="144.33333333333334" height="144"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                                 <state key="normal" title="+">
@@ -521,7 +521,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rqu-fu-ngE" userLabel="viewTopLeft">
-                                                                <rect key="frame" x="0.0" y="0.0" width="144.5" height="144"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="144.33333333333334" height="144"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -561,10 +561,10 @@
                                                         </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1IQ-vW-M8b" userLabel="viewTopRight">
-                                                        <rect key="frame" x="154.5" y="0.0" width="145" height="144"/>
+                                                        <rect key="frame" x="154.33333333333331" y="0.0" width="144.66666666666669" height="144"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdU-OQ-G2J" userLabel="buttonTopRight">
-                                                                <rect key="frame" x="0.0" y="0.0" width="145" height="144"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="144"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                                 <state key="normal" title="+">
@@ -575,7 +575,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VLC-S7-QeP" userLabel="viewTopRight">
-                                                                <rect key="frame" x="0.0" y="0.0" width="145" height="144"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="144.66666666666666" height="144"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -634,10 +634,10 @@
                                                 </variation>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f50-Ef-BVc" userLabel="bottomStackView">
-                                                <rect key="frame" x="0.0" y="154" width="299.5" height="145"/>
+                                                <rect key="frame" x="0.0" y="154" width="299" height="145"/>
                                                 <subviews>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9cS-2Z-dT0" userLabel="viewBottomLeft">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.5" height="145"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="145"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CqZ-ZO-IYs" userLabel="buttonBottomLeft">
                                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="145"/>
@@ -651,7 +651,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d7I-yi-yo2" userLabel="viewBottomLeft">
-                                                                <rect key="frame" x="0.0" y="0.0" width="0.5" height="145"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="145"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -691,10 +691,10 @@
                                                         </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SiD-dF-5WA" userLabel="ViewBottomRight">
-                                                        <rect key="frame" x="0.0" y="0.0" width="299.5" height="145"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="299" height="145"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ank-ts-OOR" userLabel="buttonBottomRight">
-                                                                <rect key="frame" x="0.0" y="0.0" width="299.5" height="145"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="145"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                                                 <state key="normal" title="+">
@@ -705,7 +705,7 @@
                                                                 </connections>
                                                             </button>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jOb-cw-DJn" userLabel="viewBottomRight">
-                                                                <rect key="frame" x="0.0" y="0.0" width="299.5" height="145"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="145"/>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -939,11 +939,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Arrow Up" width="4.5" height="3.5"/>
-        <image name="Layout 1" width="27" height="27"/>
-        <image name="Layout 2" width="27" height="27"/>
-        <image name="Layout 3" width="27" height="27"/>
-        <image name="Selected" width="27" height="27"/>
+        <image name="Arrow Up" width="4.6666665077209473" height="3.3333332538604736"/>
+        <image name="Layout 1" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Layout 2" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Layout 3" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="Selected" width="26.666666030883789" height="26.666666030883789"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
