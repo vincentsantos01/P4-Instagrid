@@ -10,22 +10,22 @@ import UIKit
 
 class GridView: UIView {
     
-    @IBOutlet var viewTopLeft :UIView?
-    @IBOutlet var viewTopRight :UIView?
-    @IBOutlet var viewBottomLeft :UIView?
-    @IBOutlet var viewBottomRight :UIView?
+    @IBOutlet var viewTopLeft :UIView!
+    @IBOutlet var viewTopRight :UIView!
+    @IBOutlet var viewBottomLeft :UIView!
+    @IBOutlet var viewBottomRight :UIView!
     
     @IBOutlet var photos : [UIImageView]!
  
-    @IBOutlet var selectedRight :UIView?
-    @IBOutlet var selectedMidle :UIView?
-    @IBOutlet var selectedLeft :UIView?
+    @IBOutlet var selectedRight :UIView!
+    @IBOutlet var selectedMidle :UIView!
+    @IBOutlet var selectedLeft :UIView!
     
     enum Style {
-        case model1, model2, model3
+        case Leftmodel, Midlemodel, Rightmodel
     }
     
-    var style :Style = .model1 {
+    var style :Style = .Leftmodel {
         didSet {
             setStyle(style)
         }
@@ -33,20 +33,20 @@ class GridView: UIView {
     
     // fonction déclaration vrai is hidden
     func model(topLeft: Bool, topRight: Bool, bottomLeft: Bool, bottomRight: Bool) {
-        viewTopLeft?.isHidden = topLeft
-        viewTopRight?.isHidden = topRight
-        viewBottomLeft?.isHidden = bottomLeft
+        viewTopLeft.isHidden = topLeft
+        viewTopRight.isHidden = topRight
+        viewBottomLeft.isHidden = bottomLeft
         viewBottomRight?.isHidden = bottomRight
     }
     
     // fonction qui change la disposition
     func setStyle(_ style: Style) {
         switch style {
-        case .model1:
+        case .Leftmodel:
             model(topLeft: true, topRight: false, bottomLeft: false, bottomRight: false)
-        case .model2:
+        case .Midlemodel:
             model(topLeft: false, topRight: false, bottomLeft: true, bottomRight: false)
-        case .model3:
+        case .Rightmodel:
             model(topLeft: false, topRight: false, bottomLeft: false, bottomRight: false)
         }
     }
@@ -54,22 +54,22 @@ class GridView: UIView {
     // fonction determine quel model selon le hidden
     func selected(style: Style) {
         self.style = style
-        selectedLeft!.isHidden = style != .model1
-        selectedMidle!.isHidden = style != .model2
-        selectedRight!.isHidden = style != .model3
+        selectedLeft.isHidden = style != .Leftmodel
+        selectedMidle.isHidden = style != .Midlemodel
+        selectedRight.isHidden = style != .Rightmodel
     }
 
     func checkCompleteGrid() -> Bool {
         switch style {
-        case .model1:
+        case .Leftmodel:
             if photos[1].image == nil || photos[2].image == nil || photos[3].image == nil {
                 return false
             }
-        case .model2:
+        case .Midlemodel:
             if photos[0].image == nil || photos[1].image == nil || photos[3].image == nil {
                 return false
             }
-        case .model3:
+        case .Rightmodel:
             if photos[0].image == nil || photos[1].image == nil || photos[2].image == nil || photos[3].image == nil {
                 return false
             }

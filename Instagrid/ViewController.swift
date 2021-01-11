@@ -33,13 +33,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // seletion dispositions
     
     @IBAction func setModel1(_ sender: UIButton) {
-        gridView.selected(style: .model1)
+        gridView.selected(style: .Leftmodel)
     }
     @IBAction func setModel2(_ sender: UIButton) {
-        gridView.selected(style: .model2)
+        gridView.selected(style: .Midlemodel)
     }
     @IBAction func setModel3(_ sender: UIButton) {
-        gridView.selected(style: .model3)
+        gridView.selected(style: .Rightmodel)
     }
     
     
