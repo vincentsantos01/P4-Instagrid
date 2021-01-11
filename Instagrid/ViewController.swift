@@ -41,13 +41,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func setModel3(_ sender: UIButton) {
         gridView.selected(style: .Rightmodel)
     }
-    
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Device rotation
-        
+
         let didRotate: (Notification) -> Void = { [self] notification in
             switch UIDevice.current.orientation {
             case .landscapeLeft, .landscapeRight:
