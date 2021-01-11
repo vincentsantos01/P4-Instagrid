@@ -27,8 +27,8 @@
 		E4497B69257E74C1000EA24C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4497B6C257E74C1000EA24C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4497B6E257E74C1000EA24C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4905E0625A7430200A04B47 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../../Downloads/Delm-Medium.otf"; sourceTree = "<group>"; };
-		E4905E0925A7430D00A04B47 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../../Downloads/ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		E4905E0625A7430200A04B47 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "/Users/vincentsantos/Documents/Projets openclassrooms/P4-Instagrid/Instagrid/../../../../Downloads/Delm-Medium.otf"; sourceTree = "<absolute>"; };
+		E4905E0925A7430D00A04B47 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = "/Users/vincentsantos/Documents/Projets openclassrooms/P4-Instagrid/Instagrid/../../../../Downloads/ThirstySoftRegular.otf"; sourceTree = "<absolute>"; };
 		E4D16C012582047300EBCBFF /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
